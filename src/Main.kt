@@ -12,6 +12,8 @@ fun feedTheFish()
     val day = randomDay()
     val food = fishFood(day)
     println("Today is $day and fish eat $food")
+    if (shouldChangeWater(day))
+        println("It's $day. Change water")
 }
 
 fun randomDay() : String
@@ -35,4 +37,9 @@ fun fishFood(day : String) : String
         "Saturday" -> "Less Food"
         else -> "Nothing"
     }
+}
+
+fun shouldChangeWater(day: String, temperature : Int = 22, dirtiness : Int = 20) : Boolean
+{
+    return true
 }
