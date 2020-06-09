@@ -24,15 +24,15 @@ fun randomDay() : String
 fun fishFood(day : String) : String
 {
     var food = "fasting"
-    when (day)
+    return when (day)
     {
-        "Sunday" -> food = "Daal Chawal"
-        "Monday" -> food = "Rajma Chawal"
-        "Tuesday" -> food = "Chhola Chawal"
-        "Wednesday" -> food = "Basil Leaves"
-        "Thursday" -> food = "Stuff"
-        "Friday" -> food = "More Food"
-        "Saturday" -> food = "Less Food"
+        "Sunday" -> "Daal Chawal"
+        "Monday" -> "Rajma Chawal"
+        "Tuesday" -> "Chhola Chawal"
+        "Wednesday" -> "Basil Leaves"
+        "Thursday" -> "Stuff"
+        "Friday" -> "More Food"
+        "Saturday" -> "Less Food"
+        else -> "Nothing"
     }
-    return food
 }
