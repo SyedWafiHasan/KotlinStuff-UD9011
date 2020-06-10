@@ -13,7 +13,7 @@ fun feedTheFish()
     val food = fishFood(day)
     println("Today is $day and fish eat $food")
     if (shouldChangeWater(day))
-        println("It's $day. Change water")
+        println("Change water")
 }
 
 fun randomDay() : String
@@ -39,7 +39,19 @@ fun fishFood(day : String) : String
     }
 }
 
-fun shouldChangeWater(day: String, temperature : Int = 22, dirtiness : Int = 20) : Boolean
+fun hardwareReading() = 20
+
+fun shouldChangeWater(day: String, temperature : Int = 22, dirtiness : Int = hardwareReading()) : Boolean
 {
-    return true
+    var isHot = temperature > 30
+    var isDirty = dirtiness > 50
+    var isSunday = day == "Sunday"
+
+    return when
+    {
+        isHot -> true
+        isDirty -> true
+        isSunday -> true
+        else -> false
+    }
 }
